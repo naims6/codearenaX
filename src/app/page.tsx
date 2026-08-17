@@ -1,5 +1,13 @@
+import { Hero } from "@/components/pages/Home/Hero/Hero";
+import { Services } from "@/components/pages/Home/Service/Service";
+import { WhyUs } from "@/components/pages/Home/WhyUs/WhyUs";
+
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black"></div>
+    <div>
+      <Hero />
+      <Services />
+      <WhyUs />
+    </div>
   );
 }
