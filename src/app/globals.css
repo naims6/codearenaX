@@ -153,7 +153,9 @@
   box-shadow:
     0 10px 30px -8px color-mix(in oklab, var(--primary) 45%, transparent),
     inset 0 1px 0 oklch(1 0 0 / 0.25);
-  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  transition:
+    box-shadow 0.4s ease,
+    transform 0.4s ease;
   &:hover {
     transform: translateY(-2px);
     box-shadow:
@@ -164,8 +166,16 @@
 
 @utility page-glow {
   background:
-    radial-gradient(60% 45% at 15% 0%, color-mix(in oklab, var(--primary) 12%, transparent), transparent 70%),
-    radial-gradient(50% 40% at 90% 10%, color-mix(in oklab, var(--cyan-soft) 16%, transparent), transparent 70%);
+    radial-gradient(
+      60% 45% at 15% 0%,
+      color-mix(in oklab, var(--primary) 12%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      50% 40% at 90% 10%,
+      color-mix(in oklab, var(--cyan-soft) 16%, transparent),
+      transparent 70%
+    );
 }
 
 @utility float-slow {
@@ -190,5 +200,66 @@
   * {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
+  }
+}
+
+@layer utilities {
+  /* raised soft neumorphic surface */
+  .neu-raised {
+    box-shadow:
+      -8px -8px 18px var(--neu-light),
+      8px 8px 20px var(--neu-dark);
+  }
+  .neu-raised-sm {
+    box-shadow:
+      -4px -4px 10px var(--neu-light),
+      5px 5px 12px var(--neu-dark);
+  }
+  /* inset / pressed */
+  .neu-inset {
+    box-shadow:
+      inset -4px -4px 10px var(--neu-light),
+      inset 5px 5px 12px var(--neu-dark);
+  }
+  .neu-hover {
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .neu-hover:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      -10px -10px 24px var(--neu-light),
+      12px 12px 30px var(--neu-dark);
+  }
+  /* subtle blue glow for primary buttons */
+  .neu-glow {
+    box-shadow:
+      -6px -6px 14px oklch(0.72 0.14 258 / 0.35),
+      6px 6px 16px oklch(0.4 0.14 258 / 0.4);
+    transition:
+      box-shadow 0.35s ease,
+      transform 0.35s ease;
+  }
+  .neu-glow:hover {
+    box-shadow:
+      -6px -6px 14px oklch(0.72 0.14 258 / 0.45),
+      6px 6px 24px oklch(0.5 0.18 258 / 0.55),
+      0 0 24px oklch(0.6 0.18 258 / 0.4);
+    transform: translateY(-2px);
+  }
+
+  /* scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
