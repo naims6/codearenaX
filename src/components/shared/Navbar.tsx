@@ -2,13 +2,9 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { links } from "@/data/navbar";
 
-const links = [
-  { label: "Services", href: "#services" },
-  { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
-];
+
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
