@@ -40,61 +40,136 @@
   --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 }
 
+/* ═══════════════════════════════════════════════════
+   LIGHT MODE TOKENS (Default)
+═══════════════════════════════════════════════════ */
 :root {
   --radius: 1.25rem;
-  --background: oklch(0.983 0.008 240);
-  --foreground: oklch(0.26 0.055 262);
-  --card: oklch(0.995 0.004 240);
-  --card-foreground: oklch(0.26 0.055 262);
-  --popover: oklch(0.995 0.004 240);
-  --popover-foreground: oklch(0.26 0.055 262);
-  --primary: oklch(0.58 0.19 260);
+
+  /* Brand blue palette */
+  --primary:            oklch(0.54 0.20 258);
   --primary-foreground: oklch(0.99 0.005 240);
-  --secondary: oklch(0.955 0.014 245);
-  --secondary-foreground: oklch(0.33 0.06 262);
-  --muted: oklch(0.955 0.014 245);
-  --muted-foreground: oklch(0.58 0.032 255);
-  --accent: oklch(0.94 0.028 245);
-  --accent-foreground: oklch(0.33 0.06 262);
-  --destructive: oklch(0.577 0.245 27.325);
+  --primary-light:      oklch(0.65 0.16 258);
+  --primary-muted:      oklch(0.54 0.20 258 / 0.12);
+
+  /* Light background & card */
+  --background:      oklch(0.955 0.012 240);
+  --foreground:      oklch(0.22 0.055 262);
+  --card:            oklch(0.968 0.010 242);
+  --card-foreground: oklch(0.22 0.055 262);
+  --popover:         oklch(0.968 0.010 242);
+  --popover-foreground: oklch(0.22 0.055 262);
+
+  --secondary:            oklch(0.940 0.018 245);
+  --secondary-foreground: oklch(0.30 0.06 262);
+  --muted:                oklch(0.935 0.016 244);
+  --muted-foreground:     oklch(0.50 0.035 255);
+  --accent:               oklch(0.928 0.026 245);
+  --accent-foreground:    oklch(0.30 0.06 262);
+  --destructive:          oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.99 0.005 240);
-  --border: oklch(0.925 0.016 245);
-  --input: oklch(0.925 0.016 245);
-  --ring: oklch(0.58 0.19 260);
-  --surface: oklch(0.978 0.011 243);
-  --surface-2: oklch(0.962 0.018 244);
-  --indigo-soft: oklch(0.6 0.15 275);
-  --cyan-soft: oklch(0.75 0.11 220);
+  --border:               oklch(0.905 0.020 245);
+  --input:                oklch(0.905 0.020 245);
+  --ring:                 oklch(0.54 0.20 258);
+  --surface:              oklch(0.960 0.015 243);
+  --surface-2:            oklch(0.945 0.020 244);
+  --indigo-soft:          oklch(0.60 0.14 275);
+  --cyan-soft:            oklch(0.68 0.14 220);
 
-  /* hero (dark navy) scope */
-  --hero-bg: oklch(0.19 0.045 262);
-  --hero-bg-2: oklch(0.14 0.035 264);
-  --hero-fg: oklch(0.97 0.008 250);
-  --hero-muted: oklch(0.76 0.025 250);
-  --hero-accent: oklch(0.66 0.17 258);
-  --hero-cyan: oklch(0.78 0.12 218);
-  --hero-line: oklch(1 0 0 / 0.12);
+  /* Light Neumorphism Shadows */
+  --neu-light:  oklch(1 0 0 / 0.95);
+  --neu-dark:   color-mix(in oklab, oklch(0.58 0.12 260) 18%, transparent);
 
-  --shadow-soft:
-    10px 12px 28px color-mix(in oklab, oklch(0.55 0.12 260) 12%, transparent),
-    -8px -8px 22px oklch(1 0 0 / 0.9);
-  --shadow-soft-lg:
-    18px 24px 48px color-mix(in oklab, oklch(0.55 0.12 260) 16%, transparent),
-    -12px -12px 32px oklch(1 0 0 / 0.95);
-  --shadow-inset:
-    inset 3px 3px 8px color-mix(in oklab, oklch(0.55 0.12 260) 12%, transparent),
-    inset -3px -3px 8px oklch(1 0 0 / 0.9);
-  --gradient-surface: linear-gradient(
-    145deg,
-    color-mix(in oklab, var(--card) 92%, oklch(1 0 0)),
-    var(--surface-2)
-  );
+  --shadow-neu-raised:
+    6px 6px 14px var(--neu-dark),
+    -4px -4px 10px var(--neu-light);
+  --shadow-neu-raised-lg:
+    10px 12px 24px var(--neu-dark),
+    -6px -8px 16px var(--neu-light);
+  --shadow-neu-inset:
+    inset 4px 4px 10px var(--neu-dark),
+    inset -3px -3px 8px var(--neu-light);
+  --shadow-neu-inset-sm:
+    inset 2px 2px 6px var(--neu-dark),
+    inset -2px -2px 5px var(--neu-light);
+
+  /* Hero Light Theme */
+  --hero-bg:     oklch(0.955 0.012 240);
+  --hero-bg-2:   oklch(0.94 0.015 242);
+  --hero-fg:     oklch(0.20 0.055 262);
+  --hero-muted:  oklch(0.48 0.035 255);
+  --hero-accent: oklch(0.54 0.20 258);
+  --hero-line:   rgba(37, 99, 235, 0.15);
+
+  --shadow-blue-glow:
+    4px 4px 14px oklch(0.54 0.20 258 / 0.45),
+    -1px -1px 5px rgba(255,255,255,0.8);
+  --shadow-blue-glow-lg:
+    6px 6px 20px oklch(0.54 0.20 258 / 0.60),
+    -1px -1px 5px rgba(255,255,255,0.8);
 }
 
+/* ═══════════════════════════════════════════════════
+   DARK MODE TOKENS (.dark)
+═══════════════════════════════════════════════════ */
+.dark {
+  /* Dark background & card */
+  --background:      oklch(0.14 0.040 263);
+  --foreground:      oklch(0.97 0.008 250);
+  --card:            oklch(0.16 0.042 264);
+  --card-foreground: oklch(0.97 0.008 250);
+  --popover:         oklch(0.16 0.042 264);
+  --popover-foreground: oklch(0.97 0.008 250);
+
+  --secondary:            oklch(0.18 0.045 264);
+  --secondary-foreground: oklch(0.90 0.015 250);
+  --muted:                oklch(0.18 0.045 264);
+  --muted-foreground:     oklch(0.72 0.025 250);
+  --accent:               oklch(0.20 0.050 264);
+  --accent-foreground:    oklch(0.97 0.008 250);
+  --border:               rgba(255, 255, 255, 0.08);
+  --input:                rgba(255, 255, 255, 0.08);
+  --surface:              oklch(0.13 0.038 263);
+  --surface-2:            oklch(0.11 0.032 264);
+
+  /* Dark Neumorphism Shadows */
+  --neu-light:  rgba(255, 255, 255, 0.045);
+  --neu-dark:   rgba(0, 0, 0, 0.65);
+
+  --shadow-neu-raised:
+    6px 6px 16px var(--neu-dark),
+    -3px -3px 8px var(--neu-light);
+  --shadow-neu-raised-lg:
+    10px 12px 24px var(--neu-dark),
+    -4px -4px 10px var(--neu-light);
+  --shadow-neu-inset:
+    inset 4px 4px 10px var(--neu-dark),
+    inset -2px -2px 6px var(--neu-light);
+  --shadow-neu-inset-sm:
+    inset 2px 2px 6px var(--neu-dark),
+    inset -1px -1px 4px var(--neu-light);
+
+  /* Hero Dark Theme */
+  --hero-bg:     oklch(0.14 0.040 263);
+  --hero-bg-2:   oklch(0.11 0.030 264);
+  --hero-fg:     oklch(0.97 0.008 250);
+  --hero-muted:  oklch(0.72 0.025 250);
+  --hero-accent: oklch(0.65 0.17 258);
+  --hero-line:   rgba(255, 255, 255, 0.12);
+
+  --shadow-blue-glow:
+    4px 4px 14px oklch(0.54 0.20 258 / 0.55),
+    -1px -1px 5px rgba(255,255,255,0.07);
+  --shadow-blue-glow-lg:
+    6px 6px 20px oklch(0.54 0.20 258 / 0.70),
+    -1px -1px 5px rgba(255,255,255,0.06);
+}
+
+/* ═══════════════════════════════════════════════════
+   BASE
+═══════════════════════════════════════════════════ */
 @layer base {
-  * {
-    border-color: var(--color-border);
-  }
+  * { border-color: var(--color-border); }
 
   body {
     background-color: var(--color-background);
@@ -102,164 +177,168 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.4s ease, color 0.4s ease;
   }
 
-  h1,
-  h2,
-  h3,
-  h4 {
+  h1, h2, h3, h4 {
     font-weight: 600;
     letter-spacing: -0.025em;
     line-height: 1.2;
     text-wrap: balance;
   }
-
-  h1 {
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    line-height: 1.15;
-  }
-
-  p {
-    text-wrap: pretty;
-  }
+  h1 { font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; }
+  p  { text-wrap: pretty; }
 }
 
-@utility soft-card {
-  background: var(--gradient-surface);
-  box-shadow: var(--shadow-soft);
-  transition:
-    box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+/* ═══════════════════════════════════════════════════
+   NEUMORPHISM UTILITIES (Works in Light & Dark)
+═══════════════════════════════════════════════════ */
+@utility neu-raised {
+  background: var(--color-card);
+  box-shadow: var(--shadow-neu-raised);
+  transition: box-shadow 0.35s cubic-bezier(0.22,1,0.36,1), transform 0.35s cubic-bezier(0.22,1,0.36,1), background-color 0.35s ease;
 }
 
-@utility soft-card-hover {
+@utility neu-raised-lg {
+  background: var(--color-card);
+  box-shadow: var(--shadow-neu-raised-lg);
+  transition: box-shadow 0.35s cubic-bezier(0.22,1,0.36,1), transform 0.35s cubic-bezier(0.22,1,0.36,1), background-color 0.35s ease;
+}
+
+@utility neu-inset {
+  box-shadow: var(--shadow-neu-inset);
+  transition: box-shadow 0.35s ease, background-color 0.35s ease;
+}
+
+@utility neu-inset-sm {
+  box-shadow: var(--shadow-neu-inset-sm);
+  transition: box-shadow 0.35s ease, background-color 0.35s ease;
+}
+
+@utility neu-hover {
   &:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-soft-lg);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-neu-raised-lg);
   }
 }
 
-@utility soft-inset {
-  background: var(--surface);
-  box-shadow: var(--shadow-inset);
-}
-
-@utility soft-raised {
-  box-shadow: var(--shadow-soft-lg);
-}
-
-@utility glow-primary {
-  box-shadow:
-    0 10px 30px -8px color-mix(in oklab, var(--primary) 45%, transparent),
-    inset 0 1px 0 oklch(1 0 0 / 0.25);
-  transition:
-    box-shadow 0.4s ease,
-    transform 0.4s ease;
+/* Blue glow on primary buttons */
+@utility neu-btn-primary {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  box-shadow: var(--shadow-blue-glow);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
   &:hover {
+    box-shadow: var(--shadow-blue-glow-lg);
     transform: translateY(-2px);
-    box-shadow:
-      0 16px 40px -8px color-mix(in oklab, var(--primary) 60%, transparent),
-      inset 0 1px 0 oklch(1 0 0 / 0.3);
+  }
+  &:active {
+    transform: translateY(0px);
+    box-shadow: inset 2px 2px 6px rgba(0,0,0,0.3), inset -1px -1px 4px rgba(255,255,255,0.1);
   }
 }
 
-@utility page-glow {
-  background:
-    radial-gradient(
-      60% 45% at 15% 0%,
-      color-mix(in oklab, var(--primary) 12%, transparent),
-      transparent 70%
-    ),
-    radial-gradient(
-      50% 40% at 90% 10%,
-      color-mix(in oklab, var(--cyan-soft) 16%, transparent),
-      transparent 70%
-    );
+/* Ghost raised button */
+@utility neu-btn-ghost {
+  background: var(--color-card);
+  box-shadow: var(--shadow-neu-raised);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  &:hover {
+    box-shadow: var(--shadow-neu-raised-lg);
+    transform: translateY(-2px);
+  }
+  &:active {
+    box-shadow: var(--shadow-neu-inset-sm);
+    transform: translateY(0px);
+  }
 }
 
-@utility float-slow {
-  animation: float-y 7s ease-in-out infinite;
+/* Icon container with inset */
+@utility neu-icon {
+  background: var(--color-surface);
+  box-shadow: var(--shadow-neu-inset);
 }
 
-@utility float-slower {
-  animation: float-y 9s ease-in-out infinite;
+/* Alias for dark-neu compatibility */
+@utility dark-neu-raised {
+  box-shadow: var(--shadow-neu-raised);
+}
+
+@utility dark-neu-raised-lg {
+  box-shadow: var(--shadow-neu-raised-lg);
+}
+
+@utility dark-neu-inset {
+  box-shadow: var(--shadow-neu-inset);
+}
+
+/* ═══════════════════════════════════════════════════
+   HERO ANIMATIONS  (CSS-only)
+═══════════════════════════════════════════════════ */
+@keyframes hero-orb-drift {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  25%       { transform: translate(28px,-18px) scale(1.04); }
+  50%       { transform: translate(-10px,-36px) scale(0.96); }
+  75%       { transform: translate(-26px,-8px) scale(1.02); }
+}
+
+@keyframes hero-orb-drift-2 {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  33%      { transform: translate(-22px,26px) scale(1.05); }
+  66%      { transform: translate(18px,-14px) scale(0.97); }
+}
+
+@keyframes hero-pulse-anim {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%      { opacity: 0.80; transform: scale(1.07); }
+}
+
+@keyframes hero-line-pulse {
+  0%, 100% { opacity: 0.05; }
+  50%      { opacity: 0.15; }
 }
 
 @keyframes float-y {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.001ms !important;
-    transition-duration: 0.001ms !important;
-  }
+@keyframes float-y-slow {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
 }
 
-@layer utilities {
-  /* raised soft neumorphic surface */
-  .neu-raised {
-    box-shadow:
-      -8px -8px 18px var(--neu-light),
-      8px 8px 20px var(--neu-dark);
-  }
-  .neu-raised-sm {
-    box-shadow:
-      -4px -4px 10px var(--neu-light),
-      5px 5px 12px var(--neu-dark);
-  }
-  /* inset / pressed */
-  .neu-inset {
-    box-shadow:
-      inset -4px -4px 10px var(--neu-light),
-      inset 5px 5px 12px var(--neu-dark);
-  }
-  .neu-hover {
-    transition:
-      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-      box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  .neu-hover:hover {
-    transform: translateY(-6px);
-    box-shadow:
-      -10px -10px 24px var(--neu-light),
-      12px 12px 30px var(--neu-dark);
-  }
-  /* subtle blue glow for primary buttons */
-  .neu-glow {
-    box-shadow:
-      -6px -6px 14px oklch(0.72 0.14 258 / 0.35),
-      6px 6px 16px oklch(0.4 0.14 258 / 0.4);
-    transition:
-      box-shadow 0.35s ease,
-      transform 0.35s ease;
-  }
-  .neu-glow:hover {
-    box-shadow:
-      -6px -6px 14px oklch(0.72 0.14 258 / 0.45),
-      6px 6px 24px oklch(0.5 0.18 258 / 0.55),
-      0 0 24px oklch(0.6 0.18 258 / 0.4);
-    transform: translateY(-2px);
-  }
-
-  /* scroll reveal */
-  .reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition:
-      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: opacity, transform;
-  }
-  .reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes hero-entrance {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
+
+@utility hero-orb {
+  animation: hero-orb-drift 14s ease-in-out infinite;
+}
+@utility hero-orb-2 {
+  animation: hero-orb-drift-2 16s ease-in-out infinite;
+}
+@utility hero-pulse {
+  animation: hero-pulse-anim 5s ease-in-out infinite;
+}
+@utility hero-line-pulse {
+  animation: hero-line-pulse 3.5s ease-in-out infinite;
+}
+@utility float-slow {
+  animation: float-y 5.5s ease-in-out infinite;
+}
+@utility float-slower {
+  animation: float-y-slow 7s ease-in-out infinite;
+}
+@utility hero-entrance {
+  animation: hero-entrance 0.7s cubic-bezier(0.22,1,0.36,1) both;
+}
+
+@utility delay-100 { animation-delay: 100ms; }
+@utility delay-200 { animation-delay: 200ms; }
+@utility delay-300 { animation-delay: 300ms; }
+@utility delay-400 { animation-delay: 400ms; }
+@utility delay-500 { animation-delay: 500ms; }
+@utility delay-600 { animation-delay: 600ms; }
+@utility delay-700 { animation-delay: 700ms; }
