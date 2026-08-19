@@ -1,7 +1,6 @@
 export const links = [
-  { label: "Platform", href: "#top" },
-  { label: "Services", href: "#services" },
-  { label: "Bootcamps", href: "#bootcamps" },
-  { label: "Why Us", href: "#whyus" },
-  { label: "Process", href: "#process" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Career", href: "/career" },
 ];
