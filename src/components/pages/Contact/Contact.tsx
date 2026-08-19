@@ -1,7 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle2, MessageSquare, Sparkles } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  Send,
+  CheckCircle2,
+  Sparkles,
+} from "lucide-react";
 import { Reveal } from "@/components/shared/Reveal";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 
@@ -17,7 +25,10 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="relative px-4 py-24 sm:px-6 overflow-hidden">
+    <section
+      id="contact"
+      className="relative px-4 py-24 sm:px-6 overflow-hidden"
+    >
       {/* Background Orbs */}
       <div className="pointer-events-none absolute left-[8%] top-[15%] -z-10 size-[380px] rounded-full bg-primary/10 blur-[140px]" />
       <div className="pointer-events-none absolute right-[5%] bottom-[15%] -z-10 size-[340px] rounded-full bg-cyan-soft/15 blur-[120px]" />
@@ -29,26 +40,26 @@ export function Contact() {
           subtitle="Have an IT project in mind, need custom software, or want to enroll in a bootcamp? Send us a message."
         />
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-12 items-start">
-          
+        <div className="mt-14 grid gap-8 lg:grid-cols-12 items-stretch">
           {/* ── Left Column: Contact Info Cards ────────────────── */}
-          <div className="lg:col-span-5 space-y-6">
-            <Reveal>
-              <div className="rounded-3xl p-7 neu-raised border border-border/50 bg-card space-y-6">
+          <div className="lg:col-span-5 h-full">
+            <Reveal className="h-full">
+              <div className="h-full flex flex-col justify-between rounded-3xl p-7 sm:p-9 neu-raised border border-border/50 bg-card">
                 <div>
                   <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1 text-xs font-bold text-primary bg-primary/10 neu-inset-sm border border-primary/20">
                     <Sparkles className="size-3.5" />
                     Direct Contact Details
                   </span>
                   <h3 className="mt-3 text-2xl font-extrabold text-foreground tracking-tight">
-                    We'd Love to Hear From You
+                    We&apos;d Love to Hear From You
                   </h3>
                   <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                    Our engineering and design team is ready to discuss your requirements and provide a tailored technical roadmap.
+                    Our engineering and design team is ready to discuss your
+                    requirements and provide a tailored technical roadmap.
                   </p>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-4 my-auto py-4">
                   {/* Email Card */}
                   <div className="flex items-start gap-4 p-4 rounded-2xl neu-inset bg-surface/70 border border-border/30">
                     <div className="grid size-10 place-items-center rounded-xl neu-raised bg-card text-primary shrink-0">
@@ -64,7 +75,9 @@ export function Contact() {
                       >
                         hello@codearenax.com
                       </a>
-                      <p className="text-[10px] text-muted-foreground">Response time: &lt; 4 hours</p>
+                      <p className="text-[10px] text-muted-foreground">
+                        Response time: &lt; 4 hours
+                      </p>
                     </div>
                   </div>
 
@@ -83,7 +96,9 @@ export function Contact() {
                       >
                         +880 1700-000000
                       </a>
-                      <span className="text-xs text-muted-foreground">+1 (555) 019-2834 (US Direct)</span>
+                      <span className="text-xs text-muted-foreground">
+                        +1 (555) 019-2834 (US Direct)
+                      </span>
                     </div>
                   </div>
 
@@ -99,7 +114,9 @@ export function Contact() {
                       <p className="text-sm font-bold text-foreground">
                         Dhaka, Bangladesh
                       </p>
-                      <p className="text-[10px] text-muted-foreground">Global Remote Engineering Squads</p>
+                      <p className="text-[10px] text-muted-foreground">
+                        Global Remote Engineering Squads
+                      </p>
                     </div>
                   </div>
 
@@ -115,35 +132,49 @@ export function Contact() {
                       <p className="text-xs font-bold text-foreground">
                         Mon - Sat: 9:00 AM - 8:00 PM (GMT+6)
                       </p>
-                      <p className="text-[10px] text-muted-foreground">24/7 Emergency Support for Clients</p>
+                      <p className="text-[10px] text-muted-foreground">
+                        24/7 Emergency Support for Clients
+                      </p>
                     </div>
                   </div>
+                </div>
+
+                <div className="pt-2 border-t border-border/30">
+                  <p className="text-[11px] text-muted-foreground text-center font-medium">
+                    ⚡ Guaranteed response within 4 hours during business days.
+                  </p>
                 </div>
               </div>
             </Reveal>
           </div>
 
           {/* ── Right Column: Project Inquiry Form ─────────────── */}
-          <div className="lg:col-span-7">
-            <Reveal delay={150}>
-              <div className="rounded-3xl p-7 sm:p-9 neu-raised-lg border border-border/60 bg-card relative">
-                
+          <div className="lg:col-span-7 h-full">
+            <Reveal delay={150} className="h-full">
+              <div className="h-full flex flex-col justify-between rounded-3xl p-7 sm:p-9 neu-raised-lg border border-border/60 bg-card relative">
                 {submitted ? (
                   <div className="py-16 text-center space-y-4 animate-in fade-in duration-300">
                     <div className="mx-auto grid size-20 place-items-center rounded-full bg-emerald-500/10 neu-inset text-emerald-500">
                       <CheckCircle2 className="size-10 animate-bounce" />
                     </div>
-                    <h3 className="text-2xl font-extrabold text-foreground">Message Sent Successfully! 🎉</h3>
+                    <h3 className="text-2xl font-extrabold text-foreground">
+                      Message Sent Successfully! 🎉
+                    </h3>
                     <p className="text-sm text-muted-foreground max-w-md mx-auto">
-                      Thank you for reaching out to CodeArenaX. Our project director will review your inquiry and contact you within 4 hours.
+                      Thank you for reaching out to CodeArenaX. Our project
+                      director will review your inquiry and contact you within 4
+                      hours.
                     </p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div>
-                      <h3 className="text-2xl font-black text-foreground">Start a Project / Inquiry</h3>
+                      <h3 className="text-2xl font-black text-foreground">
+                        Start a Project / Inquiry
+                      </h3>
                       <p className="text-xs text-muted-foreground mt-1">
-                        Fill out the details below and we will get back to you with a free consultation and project estimate.
+                        Fill out the details below and we will get back to you
+                        with a free consultation and project estimate.
                       </p>
                     </div>
 
@@ -179,12 +210,16 @@ export function Contact() {
                           Service Needed
                         </label>
                         <select className="w-full rounded-2xl px-4 py-3 text-xs neu-inset bg-surface border border-border/40 focus:outline-none focus:border-primary text-foreground">
-                          <option value="web-dev">Software & Web Development</option>
-                          <option value="ai-ml">AI & ML Solutions</option>
-                          <option value="graphic-design">Graphic Design & Branding</option>
-                          <option value="video-editing">Video Editing & Production</option>
-                          <option value="cloud-devops">Cloud Infrastructure & DevOps</option>
-                          <option value="bootcamp">Bootcamp / Training Inquiry</option>
+                          <option value="web-dev">Software Development</option>
+                          <option value="ai-ml">AI Solutions</option>
+                          <option value="graphic-design">
+                            Design & Branding
+                          </option>
+                          <option value="video-editing">Video Editing</option>
+                          <option value="cloud-devops">Cloud & DevOps</option>
+                          <option value="bootcamp">
+                            Bootcamp / Training Inquiry
+                          </option>
                         </select>
                       </div>
 

@@ -16,7 +16,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
       <div className="pointer-events-none absolute left-[5%] top-[10%] -z-10 size-[380px] rounded-full bg-primary/10 blur-[140px]" />
       <div className="pointer-events-none absolute right-[5%] bottom-[10%] -z-10 size-[340px] rounded-full bg-cyan-soft/15 blur-[120px]" />
 
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-6xl">
         
         {/* ── Back Navigation ──────────────────────────────── */}
         <div className="mb-8">

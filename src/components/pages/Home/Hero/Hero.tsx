@@ -1,11 +1,9 @@
 "use client";
 
-import { ArrowRight, ChevronRight, Star } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import { HeroVisual } from "./HeroVisual";
 import Link from "next/link";
 import { stats } from "@/data/stats";
-
-const avatarLetters = ["A", "M", "R", "S", "J"];
 
 export function Hero() {
   return (
@@ -81,35 +79,6 @@ export function Hero() {
                 Our Services
                 <ChevronRight className="size-4 text-muted-foreground transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-primary" />
               </Link>
-            </div>
-
-            {/* Social proof */}
-            <div className="hero-entrance delay-400 opacity-0 mt-7 flex items-center gap-3">
-              <div className="flex -space-x-2">
-                {avatarLetters.map((letter, i) => (
-                  <div
-                    key={i}
-                    className="size-8 rounded-full border-2 border-background bg-primary/90 flex items-center justify-center text-[10px] font-bold text-white shadow-sm"
-                    style={{ opacity: 1 - i * 0.1 }}
-                  >
-                    {letter}
-                  </div>
-                ))}
-              </div>
-              <div className="flex items-center gap-0.5">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star
-                    key={i}
-                    className="size-3 fill-amber-400 text-amber-400"
-                  />
-                ))}
-              </div>
-              <p className="text-xs text-muted-foreground">
-                <span className="font-semibold text-foreground">
-                  120+ clients
-                </span>{" "}
-                trust CodeArenaX
-              </p>
             </div>
           </div>
 

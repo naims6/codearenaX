@@ -7,11 +7,11 @@ export const groups: FooterGroup[] = [
   {
     title: "IT Solutions",
     links: [
-      { label: "Software & Web Development", href: "/services/software-development" },
-      { label: "AI & ML Solutions", href: "/services/ai-ml-solutions" },
-      { label: "Graphic Design & Branding", href: "/services/graphic-design" },
-      { label: "Video Editing & Production", href: "/services/video-editing" },
-      { label: "Cloud & DevOps Infra", href: "/services/cloud-devops" },
+      { label: "Software Development", href: "/services/software-development" },
+      { label: "AI Solutions", href: "/services/ai-ml-solutions" },
+      { label: "Design & Branding", href: "/services/graphic-design" },
+      { label: "Video Editing", href: "/services/video-editing" },
+      { label: "Cloud & DevOps", href: "/services/cloud-devops" },
     ],
   },
   {

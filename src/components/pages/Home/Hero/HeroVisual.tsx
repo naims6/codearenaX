@@ -1,113 +1,265 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-import { Sparkles, Zap, Code2, CheckCircle2 } from "lucide-react";
+import {
+  Code2,
+  Cpu,
+  ShieldCheck,
+  CheckCircle2,
+  Layers,
+  Terminal,
+  Sparkles,
+} from "lucide-react";
+
+type TabType = "engineering" | "ai" | "devops";
 
 export function HeroVisual() {
-  const [isScanning, setIsScanning] = useState(false);
-  const [scanMessage, setScanMessage] = useState<string | null>(null);
-
-  const handleScan = () => {
-    if (isScanning) return;
-    setIsScanning(true);
-    setScanMessage("Initializing 3D AI Neural Matrix...");
-    setTimeout(() => setScanMessage("Analyzing IT Solutions & Workflows..."), 800);
-    setTimeout(() => setScanMessage("AI Core Synced! ⚡"), 1600);
-    setTimeout(() => {
-      setIsScanning(false);
-      setTimeout(() => setScanMessage(null), 2500);
-    }, 2200);
-  };
+  const [activeTab, setActiveTab] = useState<TabType>("engineering");
 
   return (
-    <div className="relative mx-auto w-full max-w-lg py-4 sm:py-8 select-none">
-      {/* ── Dynamic Ambient Neon Glow Backdrops ────────────────── */}
-      <div className="hero-pulse pointer-events-none absolute -inset-10 -z-10 rounded-full bg-gradient-to-tr from-primary/30 via-cyan-soft/20 to-indigo-soft/25 blur-[120px]" />
-      <div className="hero-orb pointer-events-none absolute left-[10%] top-[10%] -z-10 size-[280px] rounded-full bg-primary/20 blur-[90px]" />
+    <div className="relative mx-auto w-full max-w-lg py-4 sm:py-6 select-none">
+      {/* ── Background Glow ────────────────────────────────────────── */}
+      <div className="pointer-events-none absolute -inset-6 -z-10 rounded-full bg-gradient-to-br from-primary/20 via-cyan-soft/15 to-indigo-soft/15 blur-[90px]" />
 
-      {/* ── 3D AI Holographic Card Frame ───────────────────────── */}
-      <div className="relative rounded-3xl border border-border/60 bg-card/90 neu-raised-lg overflow-hidden transition-all duration-500 hover:border-primary/50 group">
-        
-        {/* Holographic glowing top edge line */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] rounded-t-3xl bg-gradient-to-r from-transparent via-cyan-400 to-transparent shadow-sm" />
-
-        {/* ── Card Header Strip ─────────────────────────────────── */}
-        <div className="flex items-center justify-between px-4 py-3 border-b border-border/40 bg-surface/60 backdrop-blur-md">
+      {/* ── Main Professional Studio Card Container ───────────────── */}
+      <div className="rounded-3xl border border-border/60 bg-card/95 neu-raised-lg overflow-hidden transition-all duration-300">
+        {/* Top Header Bar with Window Controls & Status */}
+        <div className="flex items-center justify-between px-4 py-3 border-b border-border/40 bg-surface/70 backdrop-blur-md">
           <div className="flex items-center gap-2">
-            <span className="relative flex size-2.5">
-              <span className="absolute size-full rounded-full bg-cyan-400 opacity-75 animate-ping" />
-              <span className="relative size-2.5 rounded-full bg-cyan-500" />
-            </span>
-            <span className="text-[11px] font-mono font-extrabold tracking-wider text-foreground">
-              CODEARENAX 3D AI CORE
+            <div className="flex gap-1.5">
+              <span className="size-2.5 rounded-full bg-red-500/80 inline-block" />
+              <span className="size-2.5 rounded-full bg-amber-500/80 inline-block" />
+              <span className="size-2.5 rounded-full bg-emerald-500/80 inline-block" />
+            </div>
+            <span className="ml-2 text-[11px] font-mono font-bold tracking-tight text-foreground/90 flex items-center gap-1.5">
+              <Terminal className="size-3 text-primary" />
+              codearenax-studio.ts
             </span>
           </div>
+        </div>
+
+        {/* Tab Switcher */}
+        <div className="grid grid-cols-3 gap-1 p-2 bg-surface/40 border-b border-border/30">
+          <button
+            onClick={() => setActiveTab("engineering")}
+            className={`flex items-center justify-center gap-1.5 rounded-xl py-2 text-xs font-semibold transition-all duration-200 ${
+              activeTab === "engineering"
+                ? "bg-card text-primary neu-inset-sm shadow-xs font-bold"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            <Code2 className="size-3.5" />
+            <span>Software</span>
+          </button>
 
           <button
-            onClick={handleScan}
-            disabled={isScanning}
-            className="flex items-center gap-1.5 rounded-xl px-3 py-1 text-[10px] font-bold text-primary-foreground bg-primary shadow-sm neu-btn-primary active:scale-95 transition-transform"
+            onClick={() => setActiveTab("ai")}
+            className={`flex items-center justify-center gap-1.5 rounded-xl py-2 text-xs font-semibold transition-all duration-200 ${
+              activeTab === "ai"
+                ? "bg-card text-primary neu-inset-sm shadow-xs font-bold"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
           >
-            <Sparkles className={`size-3 ${isScanning ? "animate-spin" : ""}`} />
-            <span>{isScanning ? "Scanning..." : "Scan Matrix"}</span>
+            <Cpu className="size-3.5" />
+            <span>AI & ML</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab("devops")}
+            className={`flex items-center justify-center gap-1.5 rounded-xl py-2 text-xs font-semibold transition-all duration-200 ${
+              activeTab === "devops"
+                ? "bg-card text-primary neu-inset-sm shadow-xs font-bold"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            <ShieldCheck className="size-3.5" />
+            <span>Cloud</span>
           </button>
         </div>
 
-        {/* ── 3D AI Image Container with Holographic Overlays ───── */}
-        <div className="relative aspect-square w-full overflow-hidden p-3 sm:p-4 bg-gradient-to-b from-surface/40 to-background/90">
-          
-          {/* Main 3D AI Sphere Generated Artwork */}
-          <div className="relative size-full rounded-2xl overflow-hidden border border-border/40 neu-inset group-hover:scale-[1.02] transition-transform duration-500">
-            <Image
-              src="/hero-ai-3d.jpg"
-              alt="CodeArenaX 3D AI Neural Matrix"
-              fill
-              priority
-              className="object-cover transition-all duration-700 filter drop-shadow-xl group-hover:brightness-110"
-            />
-
-            {/* Scanning Beam Animation Overlay */}
-            {isScanning && (
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-cyan-400/25 to-transparent h-20 animate-in fade-in slide-in-from-top-full duration-1000 iteration-infinite" />
-            )}
-
-            {/* Ambient Dark Gradient Bottom Vignette */}
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-80" />
-
-            {/* Scanner Status Toast */}
-            {scanMessage && (
-              <div className="absolute top-4 left-4 right-4 z-20 rounded-xl p-2.5 neu-inset bg-card/90 backdrop-blur-md border border-primary/40 text-[10px] font-mono text-cyan-400 text-center animate-in fade-in zoom-in-95 duration-200">
-                ⚡ {scanMessage}
+        {/* Tab Content Display */}
+        <div className="p-5 space-y-4 bg-card">
+          {activeTab === "engineering" && (
+            <div className="space-y-3 animate-in fade-in duration-200">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-foreground flex items-center gap-1.5">
+                  <Sparkles className="size-3.5 text-primary" /> Full-Stack
+                  Architecture
+                </span>
+                <span className="text-[10px] font-mono text-muted-foreground">
+                  Next.js 15 & React 19
+                </span>
               </div>
-            )}
 
-            {/* Bottom Overlay Info Strip */}
-            <div className="absolute bottom-3 left-3 right-3 z-10 flex items-center justify-between rounded-xl p-2.5 neu-inset bg-card/85 backdrop-blur-md border border-border/40">
-              <div className="flex items-center gap-2">
-                <div className="grid size-6 place-items-center rounded-lg bg-primary/20 text-primary">
-                  <Code2 className="size-3.5" />
+              {/* Code Snippet Box */}
+              <div className="rounded-2xl p-4 neu-inset bg-surface/80 border border-border/40 font-mono text-[11px] leading-relaxed text-foreground/90 space-y-1">
+                <div className="text-muted-foreground">
+                  Enterprise Web & SaaS Stack
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold text-foreground">IT & Digital Solutions</p>
-                  <p className="text-[8px] text-muted-foreground">Web Dev, AI/ML, Video Edit & Graphics</p>
+                  <span className="text-primary font-bold">const</span> app ={" "}
+                  <span className="text-cyan-500 font-bold">
+                    createProductionApp
+                  </span>
+                  ({`{`}
+                </div>
+                <div className="pl-4 text-emerald-600 dark:text-emerald-400">
+                  frontend:{" "}
+                  <span className="text-amber-500">
+                    &quot;Next.js 15 SSR / React 19&quot;
+                  </span>
+                  ,
+                </div>
+                <div className="pl-4 text-indigo-500">
+                  backend:{" "}
+                  <span className="text-amber-500">
+                    &quot;Node.js + PostgreSQL&quot;
+                  </span>
+                  ,
+                </div>
+                <div className="pl-4 text-cyan-600 dark:text-cyan-400">
+                  security:{" "}
+                  <span className="text-amber-500">
+                    &quot;OAuth2 + Role ACL&quot;
+                  </span>
+                  ,
+                </div>
+                <div>{`}`});</div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-2 text-[10px] font-semibold text-muted-foreground pt-1">
+                <div className="flex items-center gap-1.5 p-2 rounded-xl neu-inset bg-surface/50 border border-border/20">
+                  <CheckCircle2 className="size-3.5 text-emerald-500" />{" "}
+                  Sub-second Load
+                </div>
+                <div className="flex items-center gap-1.5 p-2 rounded-xl neu-inset bg-surface/50 border border-border/20">
+                  <CheckCircle2 className="size-3.5 text-emerald-500" /> 100/100
+                  Lighthouse
+                </div>
+              </div>
+            </div>
+          )}
+
+          {activeTab === "ai" && (
+            <div className="space-y-3 animate-in fade-in duration-200">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-foreground flex items-center gap-1.5">
+                  <Cpu className="size-3.5 text-primary" /> AI & Neural
+                  Pipelines
+                </span>
+                <span className="text-[10px] font-mono text-muted-foreground">
+                  Python & LangChain
+                </span>
+              </div>
+
+              {/* Code Snippet Box */}
+              <div className="rounded-2xl p-4 neu-inset bg-surface/80 border border-border/40 font-mono text-[11px] leading-relaxed text-foreground/90 space-y-1">
+                <div className="text-muted-foreground">
+                  # Intelligent Vector RAG Engine
+                </div>
+                <div>
+                  <span className="text-primary font-bold">class</span>{" "}
+                  <span className="text-cyan-500 font-bold">
+                    AIAgentPipeline
+                  </span>
+                  :
+                </div>
+                <div className="pl-4 text-emerald-600 dark:text-emerald-400">
+                  vector_db ={" "}
+                  <span className="text-amber-500">PineconeVectorStore()</span>
+                </div>
+                <div className="pl-4 text-indigo-500">
+                  llm ={" "}
+                  <span className="text-amber-500">
+                    OpenAI(model=&quot;gpt-4o&quot;)
+                  </span>
+                </div>
+                <div className="pl-4 text-cyan-600 dark:text-cyan-400">
+                  latency ={" "}
+                  <span className="text-amber-500">
+                    &quot;&lt; 180ms response&quot;
+                  </span>
                 </div>
               </div>
 
-              <span className="flex items-center gap-1 text-[9px] font-extrabold text-emerald-500 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
-                <CheckCircle2 className="size-3" /> Live Active
-              </span>
+              <div className="grid grid-cols-2 gap-2 text-[10px] font-semibold text-muted-foreground pt-1">
+                <div className="flex items-center gap-1.5 p-2 rounded-xl neu-inset bg-surface/50 border border-border/20">
+                  <CheckCircle2 className="size-3.5 text-emerald-500" />{" "}
+                  Semantic Search
+                </div>
+                <div className="flex items-center gap-1.5 p-2 rounded-xl neu-inset bg-surface/50 border border-border/20">
+                  <CheckCircle2 className="size-3.5 text-emerald-500" /> Custom
+                  LLM Tuning
+                </div>
+              </div>
             </div>
-          </div>
+          )}
+
+          {activeTab === "devops" && (
+            <div className="space-y-3 animate-in fade-in duration-200">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-foreground flex items-center gap-1.5">
+                  <ShieldCheck className="size-3.5 text-primary" /> Cloud &
+                  Infrastructure
+                </span>
+                <span className="text-[10px] font-mono text-muted-foreground">
+                  AWS & Docker
+                </span>
+              </div>
+
+              {/* Code Snippet Box */}
+              <div className="rounded-2xl p-4 neu-inset bg-surface/80 border border-border/40 font-mono text-[11px] leading-relaxed text-foreground/90 space-y-1">
+                <div className="text-muted-foreground">
+                  # Terraform Zero-Downtime Cluster
+                </div>
+                <div>
+                  <span className="text-primary font-bold">resource</span>{" "}
+                  <span className="text-cyan-500 font-bold">
+                    &quot;aws_eks_cluster&quot;
+                  </span>{" "}
+                  {`{`}
+                </div>
+                <div className="pl-4 text-emerald-600 dark:text-emerald-400">
+                  name ={" "}
+                  <span className="text-amber-500">
+                    &quot;codearenax-production&quot;
+                  </span>
+                </div>
+                <div className="pl-4 text-indigo-500">
+                  auto_scale = <span className="text-amber-500">true</span>
+                </div>
+                <div className="pl-4 text-cyan-600 dark:text-cyan-400">
+                  uptime ={" "}
+                  <span className="text-amber-500">
+                    &quot;99.99% guaranteed&quot;
+                  </span>
+                </div>
+                <div>{`}`}</div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-2 text-[10px] font-semibold text-muted-foreground pt-1">
+                <div className="flex items-center gap-1.5 p-2 rounded-xl neu-inset bg-surface/50 border border-border/20">
+                  <CheckCircle2 className="size-3.5 text-emerald-500" />{" "}
+                  Automated CI/CD
+                </div>
+                <div className="flex items-center gap-1.5 p-2 rounded-xl neu-inset bg-surface/50 border border-border/20">
+                  <CheckCircle2 className="size-3.5 text-emerald-500" /> 24/7
+                  Monitoring
+                </div>
+              </div>
+            </div>
+          )}
         </div>
 
-        {/* ── Card Footer Specs ──────────────────────────────────── */}
-        <div className="px-4 py-3 border-t border-border/40 bg-surface/40 flex items-center justify-between text-[10px]">
-          <div className="flex items-center gap-1.5 text-muted-foreground font-mono">
-            <Zap className="size-3.5 text-amber-500" />
-            <span>AI Neural Acceleration</span>
+        {/* Footer Metrics Strip */}
+        <div className="px-4 py-3 border-t border-border/40 bg-surface/40 flex items-center justify-between text-[11px]">
+          <div className="flex items-center gap-1.5 text-muted-foreground font-semibold">
+            <Layers className="size-3.5 text-primary" />
+            <span>CodeArenaX IT Solutions</span>
           </div>
-          <span className="font-mono font-bold text-primary">Sub-0.4s Speed</span>
+          <span className="font-mono font-bold text-primary">
+            Senior Engineering
+          </span>
         </div>
       </div>
     </div>

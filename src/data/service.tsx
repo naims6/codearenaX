@@ -17,7 +17,7 @@ export interface ServiceDetailItem {
 export const services: ServiceDetailItem[] = [
   {
     slug: "software-development",
-    title: "Software & Web Development",
+    title: "Software Development",
     desc: "Custom platforms, web apps, and internal tools engineered around your business logic, built to last and scale.",
     longDesc:
       "We design and build production-grade web applications, enterprise SaaS platforms, and custom software systems. Using modern architectures like Next.js 15, React, Node.js, and PostgreSQL, we ensure your application is fast, secure, and ready to scale with your business.",
@@ -53,7 +53,7 @@ export const services: ServiceDetailItem[] = [
   },
   {
     slug: "ai-ml-solutions",
-    title: "AI & ML Solutions",
+    title: "AI Solutions",
     desc: "Smart AI features, intelligent search, automated data processing, and custom ML pipelines embedded into your apps.",
     longDesc:
       "Transform your product with custom AI and Machine Learning integrations. We build custom RAG search engines, AI virtual assistants, automated data extraction tools, and predictive ML models tailored specifically to your data.",
@@ -88,7 +88,7 @@ export const services: ServiceDetailItem[] = [
   },
   {
     slug: "graphic-design",
-    title: "Graphic Design & Branding",
+    title: "Design & Branding",
     desc: "Stunning visual identities, brand assets, UI/UX systems, and marketing graphics crafted to elevate your brand presence.",
     longDesc:
       "Your visual identity is the front door to your business. We craft cohesive brand systems, modern UI/UX design components, social media creative assets, and marketing graphics that captivate your audience and build lasting brand value.",
@@ -125,10 +125,10 @@ export const services: ServiceDetailItem[] = [
   },
   {
     slug: "video-editing",
-    title: "Video Editing & Production",
+    title: "Video Editing",
     desc: "Professional video editing, motion graphics, promotional reels, and engaging visual media for products and social campaigns.",
     longDesc:
-      "Capture audience attention with high-impact video post-production. From product demo videos and SaaS promotional reels to YouTube media and social ad campaigns, our video production team delivers cinematic motion graphics, crisp audio design, and narrative pacing.",
+      "Capture audience attention with high-impact video post-production. From product demo videos and SaaS promotional reels to YouTube media and social ad campaigns, our video editing team delivers cinematic motion graphics, crisp audio design, and narrative pacing.",
     category: "Media Production",
     iconName: "Video",
     glyph: (
@@ -160,7 +160,7 @@ export const services: ServiceDetailItem[] = [
   },
   {
     slug: "cloud-devops",
-    title: "Cloud & DevOps Infra",
+    title: "Cloud & DevOps",
     desc: "Reliable cloud infrastructure, automated CI/CD pipelines, and zero-downtime server setups on AWS, Docker, & Vercel.",
     longDesc:
       "Keep your systems fast, secure, and continuously online. We design resilient cloud architectures, automate build and deployment pipelines, and configure comprehensive monitoring and alert systems to make deployments predictable and stress-free.",
@@ -196,7 +196,7 @@ export const services: ServiceDetailItem[] = [
   },
   {
     slug: "digital-solutions",
-    title: "Digital Solutions & Integrations",
+    title: "Digital Solutions",
     desc: "End-to-end digital delivery: API integrations, legacy system modernization, and digital transformation strategy.",
     longDesc:
       "Connect your business software ecosystems into a cohesive powerhouse. We specialize in third-party API integrations, payment gateway setups, CRM/ERP synchronizations, and modernizing legacy codebases into high-velocity digital assets.",

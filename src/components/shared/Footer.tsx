@@ -6,9 +6,7 @@ export function Footer() {
   return (
     <div className="px-4 pb-10 pt-6 sm:px-6 select-none">
       <div className="mx-auto max-w-6xl rounded-3xl p-8 sm:p-10 neu-raised-lg border border-border/50 bg-card">
-
         <div className="grid gap-10 md:grid-cols-[1.5fr_1.2fr_1.2fr_1.3fr]">
-          
           {/* ── Brand Column ─────────────────────────────────── */}
           <div>
             <Link href="/" className="group flex items-center gap-3">
@@ -24,7 +22,8 @@ export function Footer() {
             </Link>
 
             <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-              Delivering high-impact IT Solutions (Web, AI/ML, Video Edit, Graphic Design) and modern developer bootcamps.
+              Delivering high-impact IT Solutions (Web, AI/ML, Video Edit,
+              Graphic Design) and modern developer bootcamps.
             </p>
 
             <Link
@@ -65,19 +64,25 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-xs text-muted-foreground">
               <li className="flex items-start gap-2.5">
                 <Mail className="size-4 text-primary shrink-0 mt-0.5" />
-                <a href="mailto:hello@codearenax.com" className="hover:text-primary transition-colors font-medium">
+                <a
+                  href="mailto:hello@codearenax.com"
+                  className="hover:text-primary transition-colors font-medium"
+                >
                   hello@codearenax.com
                 </a>
               </li>
               <li className="flex items-start gap-2.5">
                 <Phone className="size-4 text-cyan-500 shrink-0 mt-0.5" />
-                <a href="tel:+8801700000000" className="hover:text-primary transition-colors font-medium">
+                <a
+                  href="tel:+8801700000000"
+                  className="hover:text-primary transition-colors font-medium"
+                >
                   +880 1700-000000
                 </a>
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin className="size-4 text-amber-500 shrink-0 mt-0.5" />
-                <span>Dhaka, Bangladesh &amp; Global Remote</span>
+                <span>Dhaka, Bangladesh</span>
               </li>
             </ul>
           </div>
@@ -89,11 +94,26 @@ export function Footer() {
             © {new Date().getFullYear()} CodeArenaX. All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-xs text-muted-foreground font-medium">
-            <Link href="/about" className="hover:text-primary transition-colors">About Us</Link>
+            <Link
+              href="/about"
+              className="hover:text-primary transition-colors"
+            >
+              About Us
+            </Link>
             <span>•</span>
-            <Link href="/services" className="hover:text-primary transition-colors">Services</Link>
+            <Link
+              href="/services"
+              className="hover:text-primary transition-colors"
+            >
+              Services
+            </Link>
             <span>•</span>
-            <Link href="/contact" className="hover:text-primary transition-colors">Contact</Link>
+            <Link
+              href="/contact"
+              className="hover:text-primary transition-colors"
+            >
+              Contact
+            </Link>
           </div>
         </div>
       </div>
