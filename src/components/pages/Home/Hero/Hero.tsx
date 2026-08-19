@@ -65,7 +65,7 @@ export function Hero() {
             <div className="hero-entrance delay-300 opacity-0 mt-7 flex flex-wrap items-center gap-4">
               {/* Primary — blue neumorphic raised */}
               <Link
-                href="#contact"
+                href="/contact"
                 className="group relative inline-flex items-center gap-2.5 overflow-hidden rounded-2xl bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground select-none neu-btn-primary"
               >
                 Start a Project
@@ -75,7 +75,7 @@ export function Hero() {
 
               {/* Secondary — neumorphic ghost */}
               <Link
-                href="#services"
+                href="/services"
                 className="group inline-flex items-center gap-2 rounded-2xl px-7 py-3.5 text-sm font-semibold text-foreground border border-border/40 select-none transition-all duration-300 neu-btn-ghost"
               >
                 Our Services

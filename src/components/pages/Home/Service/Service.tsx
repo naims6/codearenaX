@@ -31,10 +31,10 @@ export function Services() {
                 </p>
 
                 <Link
-                  href="#contact"
+                  href={`/services/${s.slug}`}
                   className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
                 >
-                  Learn More
+                  Learn More & Details
                   <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </article>

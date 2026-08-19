@@ -6,7 +6,6 @@ import {
   Trophy,
   Code2,
   Sparkles,
-  Calendar,
   Clock,
   CheckCircle2,
   ArrowRight,
