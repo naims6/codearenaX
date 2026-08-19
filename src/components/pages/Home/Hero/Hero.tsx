@@ -3,13 +3,7 @@
 import { ArrowRight, ChevronRight, Star } from "lucide-react";
 import { HeroVisual } from "./HeroVisual";
 import Link from "next/link";
-
-const stats = [
-  { value: "120+", label: "Projects Delivered" },
-  { value: "98%",  label: "Client Satisfaction" },
-  { value: "6 yrs", label: "In Business" },
-  { value: "40+",  label: "Expert Engineers" },
-];
+import { stats } from "@/data/stats";
 
 const avatarLetters = ["A", "M", "R", "S", "J"];
 
@@ -17,7 +11,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex h-[100svh] min-h-[660px] max-h-[1000px] w-full flex-col justify-between overflow-hidden bg-background pt-20 pb-4 sm:pt-24 lg:pt-16 transition-colors duration-400"
+      className="relative flex min-h-screen lg:h-[100svh] lg:max-h-[1000px] w-full flex-col justify-between overflow-x-clip bg-background pt-24 pb-6 sm:pt-28 lg:pt-16 transition-colors duration-400"
     >
       {/* ── Background ambient glows ────────────────────── */}
       <div className="hero-orb pointer-events-none absolute left-[8%] top-[15%] -z-20 size-[380px] rounded-full bg-primary/10 blur-[130px]" />
@@ -28,7 +22,8 @@ export function Hero() {
       <div
         className="pointer-events-none absolute inset-0 -z-10 opacity-[0.04] dark:opacity-[0.03]"
         style={{
-          backgroundImage: "radial-gradient(circle, currentColor 1px, transparent 1px)",
+          backgroundImage:
+            "radial-gradient(circle, currentColor 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
       />
@@ -39,10 +34,8 @@ export function Hero() {
       {/* ── Content ─────────────────────────────────────── */}
       <div className="relative mx-auto flex w-full max-w-6xl flex-1 items-center px-4 sm:px-6">
         <div className="grid w-full items-center gap-8 lg:grid-cols-12 lg:gap-8">
-
           {/* Left — copy */}
           <div className="lg:col-span-7 flex flex-col justify-center">
-
             {/* Eyebrow — neumorphic inset pill */}
             <div className="hero-entrance opacity-0">
               <span className="inline-flex items-center gap-2 rounded-full px-4 py-1 text-xs font-semibold tracking-wide text-primary border border-border/40 neu-inset-sm bg-card">
@@ -63,7 +56,9 @@ export function Hero() {
 
             {/* Description */}
             <p className="hero-entrance delay-200 opacity-0 mt-4 max-w-[490px] text-base leading-relaxed text-muted-foreground lg:text-lg">
-              CodeArenaX is a full-service software development company. We design and build web apps, mobile apps, and custom software that help businesses grow, automate, and scale.
+              CodeArenaX is a full-service software development company. We
+              design and build web apps, mobile apps, and custom software that
+              help businesses grow, automate, and scale.
             </p>
 
             {/* CTAs */}
@@ -103,11 +98,17 @@ export function Hero() {
               </div>
               <div className="flex items-center gap-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="size-3 fill-amber-400 text-amber-400" />
+                  <Star
+                    key={i}
+                    className="size-3 fill-amber-400 text-amber-400"
+                  />
                 ))}
               </div>
               <p className="text-xs text-muted-foreground">
-                <span className="font-semibold text-foreground">120+ clients</span> trust CodeArenaX
+                <span className="font-semibold text-foreground">
+                  120+ clients
+                </span>{" "}
+                trust CodeArenaX
               </p>
             </div>
           </div>
@@ -133,7 +134,9 @@ export function Hero() {
               <span className="text-xl font-extrabold tracking-tight text-foreground sm:text-2xl">
                 {value}
               </span>
-              <span className="mt-0.5 text-[11px] text-muted-foreground">{label}</span>
+              <span className="mt-0.5 text-[11px] text-muted-foreground">
+                {label}
+              </span>
             </div>
           ))}
         </div>

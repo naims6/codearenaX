@@ -1,145 +1,113 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle2, Rocket, Clock, Users } from "lucide-react";
-
-const tabs = {
-  "App.tsx": `import { useEffect, useState } from "react";
-import { Dashboard } from "@/components/Dashboard";
-import { api } from "@/lib/api";
-
-export default function App() {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    api.auth.getSession()
-      .then(setUser)
-      .catch(console.error);
-  }, []);
-
-  if (!user) return <LoginScreen />;
-  return <Dashboard user={user} />;
-}`,
-  "api.ts": `// REST API Service Layer
-export const api = {
-  projects: {
-    list: () =>
-      fetch("/api/projects").then(r => r.json()),
-    create: (data: Project) =>
-      fetch("/api/projects", {
-        method: "POST",
-        body: JSON.stringify(data),
-      }).then(r => r.json()),
-  },
-  auth: {
-    getSession: () =>
-      fetch("/api/auth/session")
-        .then(r => r.json()),
-  },
-};`,
-  "schema.sql": `-- Client Projects Database
-CREATE TABLE projects (
-  id          UUID PRIMARY KEY
-                DEFAULT gen_random_uuid(),
-  name        TEXT NOT NULL,
-  client_id   UUID REFERENCES clients(id),
-  status      TEXT DEFAULT 'active',
-  stack       TEXT[],
-  launched_at TIMESTAMPTZ,
-  created_at  TIMESTAMPTZ DEFAULT now()
-);
-
-CREATE INDEX idx_projects_client
-  ON projects (client_id);`,
-} as const;
-
-type TabKey = keyof typeof tabs;
+import Image from "next/image";
+import { Sparkles, Zap, Code2, CheckCircle2 } from "lucide-react";
 
 export function HeroVisual() {
-  const [activeTab, setActiveTab] = useState<TabKey>("App.tsx");
+  const [isScanning, setIsScanning] = useState(false);
+  const [scanMessage, setScanMessage] = useState<string | null>(null);
+
+  const handleScan = () => {
+    if (isScanning) return;
+    setIsScanning(true);
+    setScanMessage("Initializing 3D AI Neural Matrix...");
+    setTimeout(() => setScanMessage("Analyzing IT Solutions & Workflows..."), 800);
+    setTimeout(() => setScanMessage("AI Core Synced! ⚡"), 1600);
+    setTimeout(() => {
+      setIsScanning(false);
+      setTimeout(() => setScanMessage(null), 2500);
+    }, 2200);
+  };
 
   return (
-    <div className="relative mx-auto w-full max-w-lg py-8">
-      {/* Ambient glow */}
-      <div className="pointer-events-none absolute -inset-8 -z-10 rounded-full bg-primary/15 blur-[90px] hero-pulse" />
+    <div className="relative mx-auto w-full max-w-lg py-4 sm:py-8 select-none">
+      {/* ── Dynamic Ambient Neon Glow Backdrops ────────────────── */}
+      <div className="hero-pulse pointer-events-none absolute -inset-10 -z-10 rounded-full bg-gradient-to-tr from-primary/30 via-cyan-soft/20 to-indigo-soft/25 blur-[120px]" />
+      <div className="hero-orb pointer-events-none absolute left-[10%] top-[10%] -z-10 size-[280px] rounded-full bg-primary/20 blur-[90px]" />
 
-      {/* ─── Main code card — neumorphic raised card ──────────── */}
-      <div className="relative rounded-2xl border border-border/50 bg-card neu-raised-lg overflow-hidden transition-all duration-300">
-        {/* Top sheen */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-px rounded-t-2xl bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      {/* ── 3D AI Holographic Card Frame ───────────────────────── */}
+      <div className="relative rounded-3xl border border-border/60 bg-card/90 neu-raised-lg overflow-hidden transition-all duration-500 hover:border-primary/50 group">
+        
+        {/* Holographic glowing top edge line */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] rounded-t-3xl bg-gradient-to-r from-transparent via-cyan-400 to-transparent shadow-sm" />
 
-        {/* Window header */}
-        <div className="flex items-center justify-between px-4 py-3 border-b border-border/40 bg-surface/60">
-          {/* Window control dots */}
+        {/* ── Card Header Strip ─────────────────────────────────── */}
+        <div className="flex items-center justify-between px-4 py-3 border-b border-border/40 bg-surface/60 backdrop-blur-md">
           <div className="flex items-center gap-2">
-            <span className="size-2.5 rounded-full bg-red-500/70" />
-            <span className="size-2.5 rounded-full bg-yellow-500/70" />
-            <span className="size-2.5 rounded-full bg-green-500/70" />
-          </div>
-
-          {/* File tabs strip — neumorphic inset */}
-          <div className="flex items-center gap-0.5 rounded-lg p-0.5 neu-inset-sm bg-background border border-border/30">
-            {(Object.keys(tabs) as TabKey[]).map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`rounded-md px-3 py-1 text-[10px] font-mono transition-all duration-200 ${
-                  activeTab === tab
-                    ? "bg-card text-primary neu-raised border border-primary/20 font-bold"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-
-          {/* Live badge */}
-          <div className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-500 font-semibold">
-            <span className="relative flex size-1.5">
-              <span className="absolute size-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
-              <span className="relative size-1.5 rounded-full bg-emerald-500" />
+            <span className="relative flex size-2.5">
+              <span className="absolute size-full rounded-full bg-cyan-400 opacity-75 animate-ping" />
+              <span className="relative size-2.5 rounded-full bg-cyan-500" />
             </span>
-            <span className="hidden sm:inline">LIVE</span>
+            <span className="text-[11px] font-mono font-extrabold tracking-wider text-foreground">
+              CODEARENAX 3D AI CORE
+            </span>
+          </div>
+
+          <button
+            onClick={handleScan}
+            disabled={isScanning}
+            className="flex items-center gap-1.5 rounded-xl px-3 py-1 text-[10px] font-bold text-primary-foreground bg-primary shadow-sm neu-btn-primary active:scale-95 transition-transform"
+          >
+            <Sparkles className={`size-3 ${isScanning ? "animate-spin" : ""}`} />
+            <span>{isScanning ? "Scanning..." : "Scan Matrix"}</span>
+          </button>
+        </div>
+
+        {/* ── 3D AI Image Container with Holographic Overlays ───── */}
+        <div className="relative aspect-square w-full overflow-hidden p-3 sm:p-4 bg-gradient-to-b from-surface/40 to-background/90">
+          
+          {/* Main 3D AI Sphere Generated Artwork */}
+          <div className="relative size-full rounded-2xl overflow-hidden border border-border/40 neu-inset group-hover:scale-[1.02] transition-transform duration-500">
+            <Image
+              src="/hero-ai-3d.jpg"
+              alt="CodeArenaX 3D AI Neural Matrix"
+              fill
+              priority
+              className="object-cover transition-all duration-700 filter drop-shadow-xl group-hover:brightness-110"
+            />
+
+            {/* Scanning Beam Animation Overlay */}
+            {isScanning && (
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-cyan-400/25 to-transparent h-20 animate-in fade-in slide-in-from-top-full duration-1000 iteration-infinite" />
+            )}
+
+            {/* Ambient Dark Gradient Bottom Vignette */}
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-80" />
+
+            {/* Scanner Status Toast */}
+            {scanMessage && (
+              <div className="absolute top-4 left-4 right-4 z-20 rounded-xl p-2.5 neu-inset bg-card/90 backdrop-blur-md border border-primary/40 text-[10px] font-mono text-cyan-400 text-center animate-in fade-in zoom-in-95 duration-200">
+                ⚡ {scanMessage}
+              </div>
+            )}
+
+            {/* Bottom Overlay Info Strip */}
+            <div className="absolute bottom-3 left-3 right-3 z-10 flex items-center justify-between rounded-xl p-2.5 neu-inset bg-card/85 backdrop-blur-md border border-border/40">
+              <div className="flex items-center gap-2">
+                <div className="grid size-6 place-items-center rounded-lg bg-primary/20 text-primary">
+                  <Code2 className="size-3.5" />
+                </div>
+                <div>
+                  <p className="text-[10px] font-bold text-foreground">IT & Digital Solutions</p>
+                  <p className="text-[8px] text-muted-foreground">Web Dev, AI/ML, Video Edit & Graphics</p>
+                </div>
+              </div>
+
+              <span className="flex items-center gap-1 text-[9px] font-extrabold text-emerald-500 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+                <CheckCircle2 className="size-3" /> Live Active
+              </span>
+            </div>
           </div>
         </div>
 
-        {/* Code editor body */}
-        <div className="m-3 min-h-[195px] p-4 rounded-xl neu-inset bg-surface/80 border border-border/30">
-          <pre className="overflow-x-auto font-mono text-[11px] leading-[1.75] text-foreground/90 whitespace-pre">
-            <code>{tabs[activeTab]}</code>
-          </pre>
-        </div>
-
-        {/* Status footer bar */}
-        <div className="flex items-center gap-3 px-4 py-2.5 text-[10px] font-mono border-t border-border/40 bg-surface/40">
-          <CheckCircle2 className="size-3.5 text-emerald-500 shrink-0" />
-          <span className="text-emerald-600 dark:text-emerald-400 font-medium">Build successful</span>
-          <span className="ml-auto text-muted-foreground">Ready to deploy</span>
-          <Clock className="size-3 text-muted-foreground" />
-          <span className="text-muted-foreground">just now</span>
-        </div>
-      </div>
-
-      {/* ─── Floating badge 1: top-right ───────────────────── */}
-      <div className="float-slow absolute -right-4 -top-2 z-20 flex items-center gap-3 rounded-2xl border border-border/40 bg-card px-4 py-3 neu-raised sm:-right-8">
-        <div className="grid size-8 shrink-0 place-items-center rounded-xl neu-inset text-primary bg-primary/10">
-          <Rocket className="size-4" />
-        </div>
-        <div>
-          <p className="text-[11px] font-semibold text-foreground">On-Time Delivery</p>
-          <p className="text-[10px] text-muted-foreground">95% shipped on schedule</p>
-        </div>
-      </div>
-
-      {/* ─── Floating badge 2: bottom-left ─────────────────── */}
-      <div className="float-slower absolute -bottom-2 -left-4 z-20 flex items-center gap-3 rounded-2xl border border-border/40 bg-card px-4 py-3 neu-raised sm:-left-8">
-        <div className="grid size-8 shrink-0 place-items-center rounded-xl neu-inset text-cyan-soft bg-cyan-soft/10">
-          <Users className="size-4" />
-        </div>
-        <div>
-          <p className="text-[11px] font-semibold text-foreground">Dedicated Teams</p>
-          <p className="text-[10px] text-muted-foreground">Full-stack engineers for you</p>
+        {/* ── Card Footer Specs ──────────────────────────────────── */}
+        <div className="px-4 py-3 border-t border-border/40 bg-surface/40 flex items-center justify-between text-[10px]">
+          <div className="flex items-center gap-1.5 text-muted-foreground font-mono">
+            <Zap className="size-3.5 text-amber-500" />
+            <span>AI Neural Acceleration</span>
+          </div>
+          <span className="font-mono font-bold text-primary">Sub-0.4s Speed</span>
         </div>
       </div>
     </div>
