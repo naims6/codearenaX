@@ -3,11 +3,25 @@
 import { useState } from "react";
 import { Reveal } from "@/components/shared/Reveal";
 import { SectionHeading } from "@/components/shared/SectionHeading";
-import { MapPin, Clock, ArrowRight, CheckCircle2, Send, Briefcase, FileText, User, Mail, Phone, Link2 } from "lucide-react";
-import { JobPosition, positions } from "@/data/carrer";
+import {
+  MapPin,
+  Clock,
+  ArrowRight,
+  CheckCircle2,
+  Send,
+  Briefcase,
+  FileText,
+  User,
+  Mail,
+  Phone,
+  Link2,
+} from "lucide-react";
+import { positions } from "@/data/carrer";
 
 export function Career() {
-  const [selectedJobTitle, setSelectedJobTitle] = useState<string>("General Application / Open Role");
+  const [selectedJobTitle, setSelectedJobTitle] = useState<string>(
+    "General Application / Open Role",
+  );
   const [submitted, setSubmitted] = useState(false);
 
   const handleApplyClick = (jobTitle: string) => {
@@ -123,7 +137,8 @@ export function Career() {
                   Apply for a Role at CodeArenaX
                 </h3>
                 <p className="mt-2 text-xs sm:text-sm text-muted-foreground">
-                  Ready to craft production software, build AI systems, or mentor engineers? Submit your application below.
+                  Ready to craft production software, build AI systems, or
+                  mentor engineers? Submit your application below.
                 </p>
               </div>
 
@@ -136,7 +151,12 @@ export function Career() {
                     Application Submitted Successfully! 🎉
                   </h4>
                   <p className="text-xs sm:text-sm text-muted-foreground max-w-md mx-auto leading-relaxed">
-                    Thank you for applying to join <span className="font-bold text-foreground">CodeArenaX</span>. Our talent recruitment team will review your profile and contact you within 24 to 48 hours.
+                    Thank you for applying to join{" "}
+                    <span className="font-bold text-foreground">
+                      CodeArenaX
+                    </span>
+                    . Our talent recruitment team will review your profile and
+                    contact you within 24 to 48 hours.
                   </p>
                 </div>
               ) : (
@@ -145,14 +165,17 @@ export function Career() {
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div>
                       <label className="block text-xs font-bold text-foreground mb-1.5 flex items-center gap-1">
-                        <Briefcase className="size-3.5 text-primary" /> Target Position *
+                        <Briefcase className="size-3.5 text-primary" /> Target
+                        Position *
                       </label>
                       <select
                         value={selectedJobTitle}
                         onChange={(e) => setSelectedJobTitle(e.target.value)}
                         className="w-full rounded-2xl px-4 py-3 text-xs neu-inset bg-surface border border-border/40 focus:outline-none focus:border-primary text-foreground"
                       >
-                        <option value="General Application / Open Role">General Application / Open Role</option>
+                        <option value="General Application / Open Role">
+                          General Application / Open Role
+                        </option>
                         {positions.map((p) => (
                           <option key={p.id} value={p.title}>
                             {p.title} ({p.department})
@@ -163,7 +186,8 @@ export function Career() {
 
                     <div>
                       <label className="block text-xs font-bold text-foreground mb-1.5 flex items-center gap-1">
-                        <Clock className="size-3.5 text-cyan-500" /> Experience Level *
+                        <Clock className="size-3.5 text-cyan-500" /> Experience
+                        Level *
                       </label>
                       <select className="w-full rounded-2xl px-4 py-3 text-xs neu-inset bg-surface border border-border/40 focus:outline-none focus:border-primary text-foreground">
                         <option value="junior">Junior (0 - 1 years)</option>
@@ -191,7 +215,8 @@ export function Career() {
 
                     <div>
                       <label className="block text-xs font-bold text-foreground mb-1.5 flex items-center gap-1">
-                        <Mail className="size-3.5 text-primary" /> Email Address *
+                        <Mail className="size-3.5 text-primary" /> Email Address
+                        *
                       </label>
                       <input
                         required
@@ -203,7 +228,8 @@ export function Career() {
 
                     <div>
                       <label className="block text-xs font-bold text-foreground mb-1.5 flex items-center gap-1">
-                        <Phone className="size-3.5 text-cyan-500" /> Phone / WhatsApp *
+                        <Phone className="size-3.5 text-cyan-500" /> Phone /
+                        WhatsApp *
                       </label>
                       <input
                         required
@@ -217,7 +243,8 @@ export function Career() {
                   {/* Link: Portfolio / GitHub / LinkedIn / Resume */}
                   <div>
                     <label className="block text-xs font-bold text-foreground mb-1.5 flex items-center gap-1">
-                      <Link2 className="size-3.5 text-amber-500" /> Portfolio / GitHub / LinkedIn / Resume Link *
+                      <Link2 className="size-3.5 text-amber-500" /> Portfolio /
+                      GitHub / LinkedIn / Resume Link *
                     </label>
                     <input
                       required
@@ -230,7 +257,8 @@ export function Career() {
                   {/* Cover Note / Pitch */}
                   <div>
                     <label className="block text-xs font-bold text-foreground mb-1.5 flex items-center gap-1">
-                      <FileText className="size-3.5 text-emerald-500" /> Brief Introduction / Why You Want to Join CodeArenaX *
+                      <FileText className="size-3.5 text-emerald-500" /> Brief
+                      Introduction / Why You Want to Join CodeArenaX *
                     </label>
                     <textarea
                       required
