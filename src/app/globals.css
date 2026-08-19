@@ -53,67 +53,59 @@
   --primary-muted:      oklch(0.54 0.20 258 / 0.12);
 
   /* Light background & card */
-  --background:      oklch(0.955 0.012 240);
+  --background:      oklch(0.96 0.01 240);
   --foreground:      oklch(0.22 0.055 262);
-  --card:            oklch(0.968 0.010 242);
+  --card:            oklch(0.975 0.008 242);
   --card-foreground: oklch(0.22 0.055 262);
-  --popover:         oklch(0.968 0.010 242);
+  --popover:         oklch(0.975 0.008 242);
   --popover-foreground: oklch(0.22 0.055 262);
 
-  --secondary:            oklch(0.940 0.018 245);
+  --secondary:            oklch(0.945 0.015 245);
   --secondary-foreground: oklch(0.30 0.06 262);
-  --muted:                oklch(0.935 0.016 244);
+  --muted:                oklch(0.94 0.014 244);
   --muted-foreground:     oklch(0.50 0.035 255);
-  --accent:               oklch(0.928 0.026 245);
+  --accent:               oklch(0.93 0.02 245);
   --accent-foreground:    oklch(0.30 0.06 262);
   --destructive:          oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.99 0.005 240);
-  --border:               oklch(0.905 0.020 245);
-  --input:                oklch(0.905 0.020 245);
+  --border:               oklch(0.91 0.015 245);
+  --input:                oklch(0.91 0.015 245);
   --ring:                 oklch(0.54 0.20 258);
-  --surface:              oklch(0.960 0.015 243);
-  --surface-2:            oklch(0.945 0.020 244);
+  --surface:              oklch(0.965 0.01 243);
+  --surface-2:            oklch(0.95 0.015 244);
   --indigo-soft:          oklch(0.60 0.14 275);
   --cyan-soft:            oklch(0.68 0.14 220);
 
-  /* Light Neumorphism Shadows */
-  --neu-light:  oklch(1 0 0 / 0.95);
-  --neu-dark:   color-mix(in oklab, oklch(0.58 0.12 260) 18%, transparent);
+  /* Subtle Light Neumorphism Shadows */
+  --neu-light:  rgba(255, 255, 255, 0.95);
+  --neu-dark:   rgba(37, 99, 235, 0.08);
 
   --shadow-neu-raised:
-    6px 6px 14px var(--neu-dark),
-    -4px -4px 10px var(--neu-light);
+    4px 5px 10px var(--neu-dark),
+    -3px -3px 8px var(--neu-light);
   --shadow-neu-raised-lg:
-    10px 12px 24px var(--neu-dark),
-    -6px -8px 16px var(--neu-light);
+    6px 8px 16px var(--neu-dark),
+    -4px -4px 12px var(--neu-light);
   --shadow-neu-inset:
-    inset 4px 4px 10px var(--neu-dark),
-    inset -3px -3px 8px var(--neu-light);
-  --shadow-neu-inset-sm:
-    inset 2px 2px 6px var(--neu-dark),
+    inset 3px 3px 7px var(--neu-dark),
     inset -2px -2px 5px var(--neu-light);
-
-  /* Hero Light Theme */
-  --hero-bg:     oklch(0.955 0.012 240);
-  --hero-bg-2:   oklch(0.94 0.015 242);
-  --hero-fg:     oklch(0.20 0.055 262);
-  --hero-muted:  oklch(0.48 0.035 255);
-  --hero-accent: oklch(0.54 0.20 258);
-  --hero-line:   rgba(37, 99, 235, 0.15);
+  --shadow-neu-inset-sm:
+    inset 2px 2px 4px var(--neu-dark),
+    inset -1px -1px 3px var(--neu-light);
 
   --shadow-blue-glow:
-    4px 4px 14px oklch(0.54 0.20 258 / 0.45),
-    -1px -1px 5px rgba(255,255,255,0.8);
+    3px 4px 12px oklch(0.54 0.20 258 / 0.35),
+    -1px -1px 4px rgba(255,255,255,0.8);
   --shadow-blue-glow-lg:
-    6px 6px 20px oklch(0.54 0.20 258 / 0.60),
-    -1px -1px 5px rgba(255,255,255,0.8);
+    5px 6px 16px oklch(0.54 0.20 258 / 0.50),
+    -1px -1px 4px rgba(255,255,255,0.8);
 }
 
 /* ═══════════════════════════════════════════════════
    DARK MODE TOKENS (.dark)
 ═══════════════════════════════════════════════════ */
 .dark {
-  /* Dark background & card */
+  /* Soft dark background & card */
   --background:      oklch(0.14 0.040 263);
   --foreground:      oklch(0.97 0.008 250);
   --card:            oklch(0.16 0.042 264);
@@ -127,42 +119,34 @@
   --muted-foreground:     oklch(0.72 0.025 250);
   --accent:               oklch(0.20 0.050 264);
   --accent-foreground:    oklch(0.97 0.008 250);
-  --border:               rgba(255, 255, 255, 0.08);
-  --input:                rgba(255, 255, 255, 0.08);
+  --border:               rgba(255, 255, 255, 0.07);
+  --input:                rgba(255, 255, 255, 0.07);
   --surface:              oklch(0.13 0.038 263);
   --surface-2:            oklch(0.11 0.032 264);
 
-  /* Dark Neumorphism Shadows */
-  --neu-light:  rgba(255, 255, 255, 0.045);
-  --neu-dark:   rgba(0, 0, 0, 0.65);
+  /* Subtle Dark Neumorphism Shadows (Toned Down & Softened) */
+  --neu-light:  rgba(255, 255, 255, 0.04);
+  --neu-dark:   rgba(0, 0, 0, 0.32);
 
   --shadow-neu-raised:
-    6px 6px 16px var(--neu-dark),
-    -3px -3px 8px var(--neu-light);
+    4px 5px 12px var(--neu-dark),
+    -2px -2px 6px var(--neu-light);
   --shadow-neu-raised-lg:
-    10px 12px 24px var(--neu-dark),
-    -4px -4px 10px var(--neu-light);
+    6px 8px 18px var(--neu-dark),
+    -3px -3px 8px var(--neu-light);
   --shadow-neu-inset:
-    inset 4px 4px 10px var(--neu-dark),
-    inset -2px -2px 6px var(--neu-light);
+    inset 3px 3px 7px var(--neu-dark),
+    inset -2px -2px 5px var(--neu-light);
   --shadow-neu-inset-sm:
-    inset 2px 2px 6px var(--neu-dark),
-    inset -1px -1px 4px var(--neu-light);
-
-  /* Hero Dark Theme */
-  --hero-bg:     oklch(0.14 0.040 263);
-  --hero-bg-2:   oklch(0.11 0.030 264);
-  --hero-fg:     oklch(0.97 0.008 250);
-  --hero-muted:  oklch(0.72 0.025 250);
-  --hero-accent: oklch(0.65 0.17 258);
-  --hero-line:   rgba(255, 255, 255, 0.12);
+    inset 2px 2px 4px var(--neu-dark),
+    inset -1px -1px 3px var(--neu-light);
 
   --shadow-blue-glow:
-    4px 4px 14px oklch(0.54 0.20 258 / 0.55),
-    -1px -1px 5px rgba(255,255,255,0.07);
+    3px 4px 12px oklch(0.54 0.20 258 / 0.45),
+    -1px -1px 4px rgba(255,255,255,0.06);
   --shadow-blue-glow-lg:
-    6px 6px 20px oklch(0.54 0.20 258 / 0.70),
-    -1px -1px 5px rgba(255,255,255,0.06);
+    5px 6px 16px oklch(0.54 0.20 258 / 0.60),
+    -1px -1px 4px rgba(255,255,255,0.05);
 }
 
 /* ═══════════════════════════════════════════════════
@@ -191,7 +175,7 @@
 }
 
 /* ═══════════════════════════════════════════════════
-   NEUMORPHISM UTILITIES (Works in Light & Dark)
+   NEUMORPHISM UTILITIES
 ═══════════════════════════════════════════════════ */
 @utility neu-raised {
   background: var(--color-card);
@@ -217,7 +201,7 @@
 
 @utility neu-hover {
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     box-shadow: var(--shadow-neu-raised-lg);
   }
 }
@@ -234,7 +218,7 @@
   }
   &:active {
     transform: translateY(0px);
-    box-shadow: inset 2px 2px 6px rgba(0,0,0,0.3), inset -1px -1px 4px rgba(255,255,255,0.1);
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.35), inset -1px -1px 3px rgba(255,255,255,0.1);
   }
 }
 
@@ -259,7 +243,6 @@
   box-shadow: var(--shadow-neu-inset);
 }
 
-/* Alias for dark-neu compatibility */
 @utility dark-neu-raised {
   box-shadow: var(--shadow-neu-raised);
 }
@@ -300,16 +283,16 @@
 
 @keyframes float-y {
   0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-10px); }
+  50%      { transform: translateY(-8px); }
 }
 
 @keyframes float-y-slow {
   0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-8px); }
+  50%      { transform: translateY(-6px); }
 }
 
 @keyframes hero-entrance {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 

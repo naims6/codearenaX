@@ -17,12 +17,12 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex h-[100svh] min-h-[720px] max-h-[1080px] w-full flex-col justify-between overflow-hidden bg-background pt-24 pb-5 sm:pt-28 transition-colors duration-400"
+      className="relative flex h-[100svh] min-h-[660px] max-h-[1000px] w-full flex-col justify-between overflow-hidden bg-background pt-20 pb-4 sm:pt-24 lg:pt-16 transition-colors duration-400"
     >
       {/* ── Background ambient glows ────────────────────── */}
-      <div className="hero-orb pointer-events-none absolute left-[8%] top-[18%] -z-20 size-[400px] rounded-full bg-primary/10 blur-[130px]" />
-      <div className="hero-orb-2 pointer-events-none absolute bottom-[10%] right-[5%] -z-20 size-[360px] rounded-full bg-cyan-soft/15 blur-[110px]" />
-      <div className="hero-pulse pointer-events-none absolute left-[55%] top-[55%] -z-20 size-[260px] rounded-full bg-indigo-soft/10 blur-[90px]" />
+      <div className="hero-orb pointer-events-none absolute left-[8%] top-[15%] -z-20 size-[380px] rounded-full bg-primary/10 blur-[130px]" />
+      <div className="hero-orb-2 pointer-events-none absolute bottom-[10%] right-[5%] -z-20 size-[340px] rounded-full bg-cyan-soft/15 blur-[110px]" />
+      <div className="hero-pulse pointer-events-none absolute left-[55%] top-[50%] -z-20 size-[240px] rounded-full bg-indigo-soft/10 blur-[90px]" />
 
       {/* Dot grid */}
       <div
@@ -34,25 +34,25 @@ export function Hero() {
       />
 
       {/* Accent line */}
-      <div className="hero-line-pulse pointer-events-none absolute top-[30%] left-0 right-0 -z-10 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+      <div className="hero-line-pulse pointer-events-none absolute top-[28%] left-0 right-0 -z-10 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
 
       {/* ── Content ─────────────────────────────────────── */}
       <div className="relative mx-auto flex w-full max-w-6xl flex-1 items-center px-4 sm:px-6">
-        <div className="grid w-full items-center gap-10 lg:grid-cols-12 lg:gap-8">
+        <div className="grid w-full items-center gap-8 lg:grid-cols-12 lg:gap-8">
 
           {/* Left — copy */}
           <div className="lg:col-span-7 flex flex-col justify-center">
 
             {/* Eyebrow — neumorphic inset pill */}
             <div className="hero-entrance opacity-0">
-              <span className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide text-primary border border-border/40 neu-inset-sm bg-card">
+              <span className="inline-flex items-center gap-2 rounded-full px-4 py-1 text-xs font-semibold tracking-wide text-primary border border-border/40 neu-inset-sm bg-card">
                 <span className="size-1.5 rounded-full bg-primary animate-pulse" />
                 Trusted Software Development Partner
               </span>
             </div>
 
             {/* Headline */}
-            <h1 className="hero-entrance delay-100 opacity-0 mt-7 text-[2.1rem] font-extrabold leading-[1.1] tracking-tight text-foreground sm:text-5xl lg:text-[3rem] xl:text-[3.3rem]">
+            <h1 className="hero-entrance delay-100 opacity-0 mt-5 text-[2.1rem] font-extrabold leading-[1.1] tracking-tight text-foreground sm:text-5xl lg:text-[2.85rem] xl:text-[3.15rem]">
               We Build Software{" "}
               <span className="bg-gradient-to-br from-primary via-primary-light to-cyan-soft bg-clip-text text-transparent">
                 That Moves
@@ -62,12 +62,12 @@ export function Hero() {
             </h1>
 
             {/* Description */}
-            <p className="hero-entrance delay-200 opacity-0 mt-5 max-w-[500px] text-base leading-relaxed text-muted-foreground lg:text-lg">
+            <p className="hero-entrance delay-200 opacity-0 mt-4 max-w-[490px] text-base leading-relaxed text-muted-foreground lg:text-lg">
               CodeArenaX is a full-service software development company. We design and build web apps, mobile apps, and custom software that help businesses grow, automate, and scale.
             </p>
 
             {/* CTAs */}
-            <div className="hero-entrance delay-300 opacity-0 mt-8 flex flex-wrap items-center gap-4">
+            <div className="hero-entrance delay-300 opacity-0 mt-7 flex flex-wrap items-center gap-4">
               {/* Primary — blue neumorphic raised */}
               <Link
                 href="#contact"
@@ -89,7 +89,7 @@ export function Hero() {
             </div>
 
             {/* Social proof */}
-            <div className="hero-entrance delay-400 opacity-0 mt-8 flex items-center gap-3">
+            <div className="hero-entrance delay-400 opacity-0 mt-7 flex items-center gap-3">
               <div className="flex -space-x-2">
                 {avatarLetters.map((letter, i) => (
                   <div
@@ -126,7 +126,7 @@ export function Hero() {
             <div
               key={i}
               className={cn(
-                "flex flex-col items-center justify-center py-4 px-4 text-center",
+                "flex flex-col items-center justify-center py-3.5 px-4 text-center",
                 i < 3 ? "border-r border-border/40" : "",
               )}
             >
